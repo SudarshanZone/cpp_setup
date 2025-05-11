@@ -130,4 +130,31 @@ sudo chmod +x /usr/local/bin/grpc_cpp_plugin
 | `protoc` | `sudo apt install protobuf-compiler` | [Download binary](https://github.com/protocolbuffers/protobuf/releases) |
 | `grpc_cpp_plugin` | `sudo apt install grpc-cli` | Build from source or copy manually |
 
-This guide covers **all installation methods**, including **air-gapped setups**. Let me know if you need further assistance! 🚀
+
+
+
+
+
+
+
+## Intalling on Offline
+🔍 What You Can Now Do With These Packages
+On Debian/Ubuntu Offline Machine:
+
+bash
+sudo dpkg -i *.deb
+On RPM-Based Systems (after converting with alien):
+
+bash
+sudo rpm -ivh *.rpm --nodeps
+⚠️ Final Checks
+Verify all files are present:
+
+bash
+ls *.deb | wc -l  # Should show 17 files
+Check for accidental deletions (none expected):
+
+bash
+ls | grep -E 'debconf|dpkg|tar|perl'  # Should return nothing
+This is a clean, minimal set for gRPC development. You're ready to transfer these to your offline machine! 🚀
+
